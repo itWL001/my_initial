@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "test.thread.config",
+      "type": "org.initial.heart.utils.thread.ThreadPoolConfigProperties",
+      "sourceType": "org.initial.heart.utils.thread.ThreadPoolConfigProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "test.thread.config.core-size",
+      "type": "java.lang.Integer",
+      "sourceType": "org.initial.heart.utils.thread.ThreadPoolConfigProperties"
+    },
+    {
+      "name": "test.thread.config.keep-alive-time",
+      "type": "java.lang.Integer",
+      "sourceType": "org.initial.heart.utils.thread.ThreadPoolConfigProperties"
+    },
+    {
+      "name": "test.thread.config.max-size",
+      "type": "java.lang.Integer",
+      "sourceType": "org.initial.heart.utils.thread.ThreadPoolConfigProperties"
+    }
+  ],
+  "hints": []
+}

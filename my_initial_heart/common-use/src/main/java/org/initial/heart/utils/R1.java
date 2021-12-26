@@ -1,0 +1,67 @@
+/**
+ * Copyright (c) 2016-2019 人人开源 All rights reserved.
+ * <p>
+ * https://www.renren.io
+ * <p>
+ * 版权所有，侵权必究！
+ */
+
+package org.initial.heart.utils;
+
+import org.apache.http.HttpStatus;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * 返回数据
+ *
+ * @author Mark sunlightcs@gmail.com
+ */
+//apache做的使用java代码发送http请求的
+//HttpStatus 在mvn repository.com的httpcompoments
+public class R1 extends HashMap<String, Object> {
+    private static final long serialVersionUID = 1L;
+
+    public R1() {
+        put("code", 0);
+        put("msg", "success");
+    }
+
+    public static R1 error() {
+        return error(HttpStatus.SC_INTERNAL_SERVER_ERROR, "未知异常，请联系管理员");
+    }
+
+    public static R1 error(String msg) {
+        return error(HttpStatus.SC_INTERNAL_SERVER_ERROR, msg);
+    }
+
+    public static R1 error(int code, String msg) {
+        R1 r = new R1();
+        r.put("code", code);
+        r.put("msg", msg);
+        return r;
+    }
+
+    public static R1 ok(String msg) {
+        R1 r = new R1();
+        r.put("msg", msg);
+        return r;
+    }
+
+    public static R1 ok(Map<String, Object> map) {
+        R1 r = new R1();
+        r.putAll(map);
+        return r;
+    }
+
+    public static R1 ok() {
+        return new R1();
+    }
+
+    @Override
+    public R1 put(String key, Object value) {
+        super.put(key, value);
+        return this;
+    }
+}
